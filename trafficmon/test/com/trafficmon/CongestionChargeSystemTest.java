@@ -3,13 +3,19 @@ import org.junit.Test;
 import java.util.Random;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.Rule;
+import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class CongestionChargeSystemTest {
+
+    @Rule
+    public JUnitRuleMockery context = new JUnitRuleMockery();
 
     @Test
     public void sixPoundsIfBefore2PM() {

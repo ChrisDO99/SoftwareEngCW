@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af98b89b-7fc6-4df2-9103-0104657c10c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,23 +32,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1623" />
+          <entry key="java" value="1629" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1623" />
+          <entry key="JAVA" value="1629" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/CongestionChargeSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#273#295#0" expanded="true" />
@@ -59,14 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -92,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="76">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -134,8 +129,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="100" />
-    <option name="y" value="20" />
+    <option name="x" value="94" />
+    <option name="y" value="-14" />
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
@@ -155,12 +150,23 @@
             <path>
               <item name="SoftwareEngCW" type="b2602c69:ProjectViewProjectNode" />
               <item name="trafficmon" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftwareEngCW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trafficmon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoftwareEngCW" type="b2602c69:ProjectViewProjectNode" />
               <item name="trafficmon" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoftwareEngCW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trafficmon" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="trafficmon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -176,11 +182,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543771195782" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/trafficmon/lib/trafficmon-externals.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543776154597" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/trafficmon/lib/jmock-junit4-2.8.1.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -229,7 +235,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543700985790</updated>
-      <workItem from="1543700991034" duration="10534000" />
+      <workItem from="1543700991034" duration="14211000" />
     </task>
     <servers />
   </component>
@@ -266,7 +272,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10534000" />
+    <option name="totallyTimeSpent" value="14211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -277,7 +283,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2506427" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1600257" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32884097" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -286,7 +292,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32884097" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -309,20 +315,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/ExitEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/EntryEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -336,31 +328,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/Vehicle.java">
+    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/ExitEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java">
+    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/EntryEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trafficmon/src/com/trafficmon/CongestionChargeSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#273#295#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -441,7 +444,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>trafficmon-externals</last-edited>
+          <last-edited>jmock-junit4-2.8.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
