@@ -1,4 +1,5 @@
 package com.trafficmon;
+import org.jmock.Expectations;
 import org.junit.Test;
 import java.util.Random;
 
@@ -16,6 +17,22 @@ public class CongestionChargeSystemTest {
 
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
+
+    EntryEvent entryevent = context.mock(EntryEvent.class);
+    CongestionChargeSystem congestionchargesystem = new CongestionChargeSystem();
+    String registration = "12345";
+    Vehicle testVehicle = Vehicle.withRegistration(registration);
+
+    @Test
+    public void enteringZoneRegistersEvent() {
+
+
+        context.checking(new Expectations() {{
+            exactly(1).of(entryevent).ZoneBoundaryCrossing;
+        }});
+
+        congestionchargesystem.vehicleEnteringZone(testVehicle);
+    }
 
     @Test
     public void sixPoundsIfBefore2PM() {

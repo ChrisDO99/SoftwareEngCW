@@ -20,6 +20,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="jmock-junit4-2.8.1" level="project" />
-    <orderEntry type="library" name="jmock-junit4-2.8.11" level="project" />
+    <orderEntry type="library" name="jmock-2.8.1" level="project" />
   </component>
 </module>
