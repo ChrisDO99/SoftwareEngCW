@@ -45,11 +45,11 @@ public class CongestionChargeSystemTest {
         int randomHour = rand.nextInt(14);
 
         SimpleDateFormat hourExtract = new SimpleDateFormat("HH");
-        Date currentDate = new Date(entry.timestamp());
+        Date currentDate = new Date(entry.getTime());
         int currentHour = Integer.parseInt(hourExtract.format(currentDate));
 
         int timeDifference = currentHour - randomHour;
-        long moddedTime = entry.timestamp() - (timeDifference * 60 * 60 * 1000);
+        long moddedTime = entry.getTime() - (timeDifference * 60 * 60 * 1000);
         entry.setTime(moddedTime);
 
         /*

@@ -80,8 +80,10 @@ public class CongestionChargeSystem {
         }
 
         for (int i =0; i != crossings.size(); i+=2) {
-            long pairTime = crossings.get(i+1).getTime() - crossings.get(i).getTime();
-            totalTime += pairTime;
+            if (i+2 <= crossings.size()) {
+                long pairTime = crossings.get(i + 1).getTime() - crossings.get(i).getTime();
+                totalTime += pairTime;
+            }
         }
 
         if (totalTime > (4 * 60 * 60 * 1000)) {
