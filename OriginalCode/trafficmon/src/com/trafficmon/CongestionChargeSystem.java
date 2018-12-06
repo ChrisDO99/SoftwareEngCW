@@ -72,6 +72,7 @@ public class CongestionChargeSystem {
         return charge;
     }
 
+
     private boolean previouslyRegistered(Vehicle vehicle) {
         for (ZoneBoundaryCrossing crossing : eventLog) {
             if (crossing.getVehicle().equals(vehicle)) {
@@ -103,6 +104,11 @@ public class CongestionChargeSystem {
 
     private int minutesBetween(long startTimeMs, long endTimeMs) {
         return (int) Math.ceil((endTimeMs - startTimeMs) / (1000.0 * 60.0));
+    }
+
+    //added getter function for eventlog for testing
+    public List<ZoneBoundaryCrossing> getEventLog() {
+        return eventLog;
     }
 
 }

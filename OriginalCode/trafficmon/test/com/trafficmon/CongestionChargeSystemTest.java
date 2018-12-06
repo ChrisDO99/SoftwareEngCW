@@ -1,6 +1,10 @@
 package com.trafficmon;
 import org.jmock.Expectations;
 import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Random;
 
 import java.text.SimpleDateFormat;
@@ -10,11 +14,14 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class CongestionChargeSystemTest {
 
+    /*
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
 
@@ -23,20 +30,139 @@ public class CongestionChargeSystemTest {
     String registration = "12345";
     Vehicle testVehicle = Vehicle.withRegistration(registration);
 
+
     @Test
     public void enteringZoneRegistersEvent() {
-
-
         context.checking(new Expectations() {{
-            exactly(1).of(entryevent).ZoneBoundaryCrossing;
+            exactly(1).of(entryevent);
         }});
 
         congestionchargesystem.vehicleEnteringZone(testVehicle);
     }
+    */
+    private static final String REGISTRATION = "123456";
+
+    @Rule
+    public JUnitRuleMockery context = new JUnitRuleMockery();
+
+    Vehicle vehicle = context.mock(Vehicle.class);
+    CongestionChargeSystem congestionChargeSystem = new CongestionChargeSystem();
+
+    CongestionChargeSystem conmock = context.mock(CongestionChargeSystem.class);
+
+
+    @Test
+    public void vehicleRegisters(){
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+
+        String testString = "Vehicle [" + inputRegistration + ']';
+
+        String vehicleString = testVehicle.toString();
+
+
+        assertThat(vehicleString, is(testString));
+    }
+
+    @Test
+    public void vehicleEquals(){
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        String inputRegistration2 = "234567";
+        Vehicle testVehicle2 = Vehicle.withRegistration(inputRegistration2);
+
+        assertTrue(testVehicle.equals(testVehicle));
+        assertFalse(testVehicle.equals(testVehicle2));
+    }
+
+    //Add test for hashcode in Vehicle
+
+    //Add test for ZoneBoundaryCrossing with CongestionChargeSystem
+
+    @Test
+    public void vehicleRegisteredInCrossing() {
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        EntryEvent testEntry = new EntryEvent(testVehicle);
+        ExitEvent testExit = new ExitEvent(testVehicle);
+
+        assertThat(testVehicle, is(testEntry.getVehicle()));
+        assertThat(testVehicle, is(testExit.getVehicle()));
+    }
+
+    @Test
+    public void vehicleAddedToEventLog() {
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        CongestionChargeSystem testSystem = new CongestionChargeSystem();
+
+        testSystem.vehicleEnteringZone(testVehicle);
+        testSystem.vehicleLeavingZone(testVehicle);
+
+        List<ZoneBoundaryCrossing> eventLog = testSystem.getEventLog();
+
+        assertThat(testVehicle, is(eventLog.get(0).getVehicle()));
+        assertThat(testVehicle, is(eventLog.get(1).getVehicle()));
+    }
+
+    @Test
+    public void eventLogRegistersEntryAndExit() {
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        CongestionChargeSystem testSystem = new CongestionChargeSystem();
+
+        testSystem.vehicleEnteringZone(testVehicle);
+        testSystem.vehicleLeavingZone(testVehicle);
+
+        List<ZoneBoundaryCrossing> eventLog = testSystem.getEventLog();
+
+        assertTrue(eventLog.get(0) instanceof EntryEvent);
+        assertTrue(eventLog.get(1) instanceof ExitEvent);
+    }
+
+    @Test
+    public void notAddedToEventLogIfExitOnly() {
+        //Tests the previouslyRegistered() function in CongestionChargeSystem
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        CongestionChargeSystem testSystem = new CongestionChargeSystem();
+
+        testSystem.vehicleLeavingZone(testVehicle);
+
+        List<ZoneBoundaryCrossing> eventLog = testSystem.getEventLog();
+
+        assertThat(0, is(eventLog.size()));
+    }
+
+    @Test
+    public void checkOrderingTest() {
+
+        Method method = CongestionChargeSystem.class.getMethods(previouslyRegistered);
+        method.setAccessible(true);
+        return method.invoke(targetObject, argObjects);
+
+        String inputRegistration = "123456";
+        Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
+
+        CongestionChargeSystem testSystem = new CongestionChargeSystem();
+
+        testSystem.vehicleLeddweavingZone(testVehicle);
+
+        List<ZoneBoundaryCrossing> eventLog = testSystem.getEventLog();
+
+        assertThat(0, is(eventLog.size()));
+    }
+
 
     @Test
     public void sixPoundsIfBefore2PM() {
-
+        /*
         String registration = "12345";
         Vehicle testVehicle = Vehicle.withRegistration(registration);
         EntryEvent entry = new EntryEvent(testVehicle);
@@ -58,8 +184,8 @@ public class CongestionChargeSystemTest {
         System.out.println(sdformat.format(dateTest));
         */
 
-        CongestionChargeSystem testSystem = new CongestionChargeSystem();
-        testSystem.eventLog.add(entry);
+        //CongestionChargeSystem testSystem = new CongestionChargeSystem();
+        //testSystem.eventLog.add(entry);
 
 
     }
