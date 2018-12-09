@@ -1,41 +1,70 @@
 package com.trafficmon;
+
 import org.jmock.Expectations;
-import org.junit.Test;
-import java.util.Random;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 import org.junit.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 
 public class CongestionChargeSystemTest {
 
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
 
-    EntryEvent entryevent = context.mock(EntryEvent.class);
-    CongestionChargeSystem congestionchargesystem = new CongestionChargeSystem();
+
+    Crossing mockCrossing = context.mock(Crossing.class);
+    VehicleInterface mockVehicle = context.mock(VehicleInterface.class);
+    OperationsInterface mockOperations = context.mock(OperationsInterface.class);
+    CongestionChargeSystem testSystem = new CongestionChargeSystem();
+
     String registration = "12345";
     Vehicle testVehicle = Vehicle.withRegistration(registration);
+    EntryEvent testEntry = new EntryEvent(testVehicle);
+    ExitEvent testExit = new ExitEvent(testVehicle);
+
 
     @Test
-    public void enteringZoneRegistersEvent() {
-
+    public void jMockTest() {
 
         context.checking(new Expectations() {{
-            exactly(1).of(entryevent).ZoneBoundaryCrossing;
+            exactly(1).of(mockCrossing).getVehicle();
         }});
 
-        congestionchargesystem.vehicleEnteringZone(testVehicle);
+        testSystem.vehicleEnteringZone(testVehicle);
+        testSystem.vehicleLeavingZone(testVehicle);
+
+        testSystem.testJMock(testEntry);
     }
 
     @Test
+    public void checkOrderingOfTest() {
+
+        testSystem.vehicleEnteringZone(testVehicle);
+        testSystem.vehicleLeavingZone(testVehicle);
+
+        context.checking(new Expectations() {{
+            atLeast(1).of(mockCrossing).getVehicle();
+            will(returnValue(8));
+            exactly(1).of(mockCrossing).getTime();
+            will(returnValue(5));
+            exactly(1).of(mockOperations).triggerInvestigationInto(testVehicle);
+        }});
+
+        testSystem.calculateCharges();
+    }
+
+
+    @Test
     public void sixPoundsIfBefore2PM() {
+
+        List<ZoneBoundaryCrossing> crossings = new ArrayList<ZoneBoundaryCrossing>();
+        crossings.add(mockCrossing);
 
         String registration = "12345";
         Vehicle testVehicle = Vehicle.withRegistration(registration);
@@ -52,17 +81,14 @@ public class CongestionChargeSystemTest {
         long moddedTime = entry.getTime() - (timeDifference * 60 * 60 * 1000);
         entry.setTime(moddedTime);
 
-        /*
-        SimpleDateFormat sdformat = new SimpleDateFormat("YYYY/MM/dd:HH:mm:ss");
-        Date dateTest = new Date(entry.timestamp());
-        System.out.println(sdformat.format(dateTest));
-        */
 
         CongestionChargeSystem testSystem = new CongestionChargeSystem();
         testSystem.eventLog.add(entry);
 
 
     }
+
+
 
     @Test
     public void fourPoundsIfAfter2PM() {

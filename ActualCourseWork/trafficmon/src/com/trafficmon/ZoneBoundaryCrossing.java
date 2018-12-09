@@ -3,7 +3,7 @@ package com.trafficmon;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class ZoneBoundaryCrossing {
+public class ZoneBoundaryCrossing implements Crossing{
 
     private final Vehicle vehicle;
     private long time;
@@ -14,7 +14,6 @@ public abstract class ZoneBoundaryCrossing {
     }
 
     public Vehicle getVehicle() {
-
         return vehicle;
     }
 
@@ -32,5 +31,7 @@ public abstract class ZoneBoundaryCrossing {
     public void setTime(long newTime) {
         time = newTime;
     }
+
+    public void testFunction() {}
 
 }

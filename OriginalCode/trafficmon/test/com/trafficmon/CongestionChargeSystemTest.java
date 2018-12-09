@@ -53,6 +53,7 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void vehicleRegisters(){
+        //Tests if vehicle registration is equal to the registration it was given
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -67,6 +68,7 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void vehicleEquals(){
+        //Tests the Vehicle equals function, that the vehicle is equal to itself
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -83,6 +85,7 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void vehicleRegisteredInCrossing() {
+        //Tests whether the vehicle in ZoneBoundaryCrossing objects is the same as they were given
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -95,6 +98,7 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void vehicleAddedToEventLog() {
+        //Tests whether the vehicle in the eventlog is the same one as was added
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -111,6 +115,7 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void eventLogRegistersEntryAndExit() {
+        //Tests whether entry and exit events are correctly registered in eventlog
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -127,7 +132,8 @@ public class CongestionChargeSystemTest {
 
     @Test
     public void notAddedToEventLogIfExitOnly() {
-        //Tests the previouslyRegistered() function in CongestionChargeSystem
+        //Tests the previouslyRegistered() function in CongestionChargeSystem. A vehicle's exit isn't added if
+        //it hasn't previously entered
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
@@ -143,20 +149,15 @@ public class CongestionChargeSystemTest {
     @Test
     public void checkOrderingTest() {
 
-        Method method = CongestionChargeSystem.class.getMethods(previouslyRegistered);
-        method.setAccessible(true);
-        return method.invoke(targetObject, argObjects);
-
         String inputRegistration = "123456";
         Vehicle testVehicle = Vehicle.withRegistration(inputRegistration);
 
         CongestionChargeSystem testSystem = new CongestionChargeSystem();
 
-        testSystem.vehicleLeddweavingZone(testVehicle);
+        testSystem.vehicleLeavingZone(testVehicle);
 
         List<ZoneBoundaryCrossing> eventLog = testSystem.getEventLog();
 
-        assertThat(0, is(eventLog.size()));
     }
 
 

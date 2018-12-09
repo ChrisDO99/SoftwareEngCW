@@ -4,6 +4,12 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
+   /* Crossing crossing;
+    OperationsInterface operationsInterface;
+    public CongestionChargeSystem(Crossing crossing, OperationsInterface operationsInterface){
+        this.crossing = crossing;
+        this.operationsInterface = operationsInterface;
+    }*/
 
     public final List<ZoneBoundaryCrossing> eventLog = new ArrayList<ZoneBoundaryCrossing>();
 
@@ -16,6 +22,11 @@ public class CongestionChargeSystem {
             return;
         }
         eventLog.add(new ExitEvent(vehicle));
+    }
+
+    public void testJMock(EntryEvent testEntry) {
+        System.out.println("Hello there");
+        testEntry.testFunction();
     }
 
     public void calculateCharges() {
@@ -37,7 +48,9 @@ public class CongestionChargeSystem {
                 OperationsTeam.getInstance().triggerInvestigationInto(vehicle);
             } else {
 
-                BigDecimal charge = calculateChargeForTimeInZone(crossings);
+                ChargeCalculator calculator = new ChargeCalculator(crossings);
+
+                BigDecimal charge = calculator.calculateChargeForTimeInZone();
 
                 try {
                     //this is where charge is deducted
@@ -49,50 +62,6 @@ public class CongestionChargeSystem {
                 }
             }
         }
-    }
-
-    private int calculateEntryCharge(ZoneBoundaryCrossing crossing) {
-        int entryCost = 0;
-        if (crossing instanceof EntryEvent && crossing.getHour() < 14) {
-            entryCost = 6;
-        }
-        else if (crossing instanceof EntryEvent && crossing.getHour() >= 14) {
-            entryCost = 4;
-        }
-        return entryCost;
-    }
-
-    private BigDecimal calculateChargeForTimeInZone(List<ZoneBoundaryCrossing> crossings) {
-
-        int totalCost = 0;
-        BigDecimal charge;
-        long totalTime = 0;
-
-        totalCost += calculateEntryCharge(crossings.get(0));
-
-        for (int i =0; i != crossings.size(); i+=2) {
-            if (i+2 <= crossings.size()) {
-                long timeDelta = crossings.get(i+2).getTime() - crossings.get(i).getTime();
-                if (timeDelta > (4 * 60 * 60 * 1000)) {
-                    totalCost += calculateEntryCharge(crossings.get(i+2));
-                }
-            }
-        }
-
-        for (int i =0; i != crossings.size(); i+=2) {
-            if (i+2 <= crossings.size()) {
-                long pairTime = crossings.get(i + 1).getTime() - crossings.get(i).getTime();
-                totalTime += pairTime;
-            }
-        }
-
-        if (totalTime > (4 * 60 * 60 * 1000)) {
-            totalCost = 12;
-        }
-
-        charge = new BigDecimal(totalCost);
-
-        return charge;
     }
 
     private boolean previouslyRegistered(Vehicle vehicle) {
