@@ -21,12 +21,12 @@ public class ZoneBoundaryTest {
     @Test
     public void getHourTest(){
 
-        long time = System.currentTimeMillis();
-        SimpleDateFormat hourExtract = new SimpleDateFormat("20");
+        long time = 1544477121111L; // 21:25 on 10/12/2018
+        SimpleDateFormat hourExtract = new SimpleDateFormat("HH");
         Date date = new Date(time);
         int hour = Integer.parseInt(hourExtract.format(date));
 
-        assertEquals(hour, 20);
+        assertEquals(hour, 21);
     }
 
     @Test
