@@ -3,7 +3,7 @@ package com.trafficmon;
 public interface Crossing {
 
     public String hello = "Hello";
-    long time;
+    long time = 0;
 
     Vehicle getVehicle();
     long getTime();

@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af98b89b-7fc6-4df2-9103-0104657c10c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/.idea/libraries/hamcrest_all_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/.idea/libraries/junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ChargeCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/Crossing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/OperationsInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/VehicleInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/EntryEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/EntryEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ZoneBoundaryCrossing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ZoneBoundaryCrossing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/test/trafficmon/com/trafficmon/CongestionChargeSystemTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/EntryEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/EntryEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/Crossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/Crossing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/trafficmon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/trafficmon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -222,7 +213,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544381847004" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544386148992" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -392,7 +383,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="0" width="1400" height="820" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />

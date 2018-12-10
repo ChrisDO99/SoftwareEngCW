@@ -4,12 +4,11 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
-   /* Crossing crossing;
+    Crossing crossing;
     OperationsInterface operationsInterface;
-    public CongestionChargeSystem(Crossing crossing, OperationsInterface operationsInterface){
+    public CongestionChargeSystem(Crossing crossing){
         this.crossing = crossing;
-        this.operationsInterface = operationsInterface;
-    }*/
+    }
 
     public final List<ZoneBoundaryCrossing> eventLog = new ArrayList<ZoneBoundaryCrossing>();
 
@@ -28,6 +27,8 @@ public class CongestionChargeSystem {
         System.out.println("Hello there");
         testEntry.testFunction();
     }
+
+
 
     public void calculateCharges() {
 

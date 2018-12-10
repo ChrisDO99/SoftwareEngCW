@@ -21,12 +21,15 @@ public class CongestionChargeSystemTest {
     Crossing mockCrossing = context.mock(Crossing.class);
     VehicleInterface mockVehicle = context.mock(VehicleInterface.class);
     OperationsInterface mockOperations = context.mock(OperationsInterface.class);
-    CongestionChargeSystem testSystem = new CongestionChargeSystem();
+    //CongestionChargeSystem testSystem = new CongestionChargeSystem();
 
     String registration = "12345";
     Vehicle testVehicle = Vehicle.withRegistration(registration);
     EntryEvent testEntry = new EntryEvent(testVehicle);
     ExitEvent testExit = new ExitEvent(testVehicle);
+
+    Crossing testEntry1 = new ZoneBoundaryCrossing(testVehicle);
+
 
 
     @Test
@@ -36,27 +39,28 @@ public class CongestionChargeSystemTest {
             exactly(1).of(mockCrossing).getVehicle();
         }});
 
-        testSystem.vehicleEnteringZone(testVehicle);
-        testSystem.vehicleLeavingZone(testVehicle);
+        //testSystem.vehicleEnteringZone(testVehicle);
+        //testSystem.vehicleLeavingZone(testVehicle);
 
-        testSystem.testJMock(testEntry);
+        //testSystem.testJMock(testEntry1);
     }
 
     @Test
     public void checkOrderingOfTest() {
-
-        testSystem.vehicleEnteringZone(testVehicle);
-        testSystem.vehicleLeavingZone(testVehicle);
+        Crossing mockCrossing1 = context.mock(Crossing.class);
+        CongestionChargeSystem testSystem1 = new CongestionChargeSystem(mockCrossing1);
+        testSystem1.vehicleEnteringZone(testVehicle);
+        testSystem1.vehicleLeavingZone(testVehicle);
 
         context.checking(new Expectations() {{
-            atLeast(1).of(mockCrossing).getVehicle();
+            atLeast(1).of(mockCrossing1).getVehicle();
             will(returnValue(8));
-            exactly(1).of(mockCrossing).getTime();
+            exactly(1).of(mockCrossing1).getTime();
             will(returnValue(5));
             exactly(1).of(mockOperations).triggerInvestigationInto(testVehicle);
         }});
 
-        testSystem.calculateCharges();
+        //testSystem.calculateCharges();
     }
 
 
@@ -64,7 +68,7 @@ public class CongestionChargeSystemTest {
     public void sixPoundsIfBefore2PM() {
 
         List<ZoneBoundaryCrossing> crossings = new ArrayList<ZoneBoundaryCrossing>();
-        crossings.add(mockCrossing);
+        //crossings.add(mockCrossing);
 
         String registration = "12345";
         Vehicle testVehicle = Vehicle.withRegistration(registration);
