@@ -6,13 +6,11 @@ import static org.junit.Assert.assertTrue;
 
 public class EventLoggerTest {
 
+    EventLogger logger = new EventLogger();
+    Vehicle testVehicle = Vehicle.withRegistration("12345");
+
     @Test
     public void getEventLogTest() {
-        String registration = "12345";
-        Vehicle testVehicle = Vehicle.withRegistration(registration);
-
-        EventLogger logger = new EventLogger();
-
         logger.addEntry(testVehicle);
 
         assertTrue(testVehicle.equals(logger.getEventLog().get(0).getVehicle()));
@@ -20,11 +18,6 @@ public class EventLoggerTest {
 
     @Test
     public void putsEntryCorrectly() {
-        String registration = "12345";
-        Vehicle testVehicle = Vehicle.withRegistration(registration);
-
-        EventLogger logger = new EventLogger();
-
         logger.addEntry(testVehicle);
 
         assertTrue(logger.getEventLog().get(0) instanceof EntryEvent);
@@ -32,11 +25,6 @@ public class EventLoggerTest {
 
     @Test
     public void putsExitCorrectly() {
-        String registration = "12345";
-        Vehicle testVehicle = Vehicle.withRegistration(registration);
-
-        EventLogger logger = new EventLogger();
-
         logger.addEntry(testVehicle);
         logger.addExit(testVehicle);
 
@@ -45,11 +33,6 @@ public class EventLoggerTest {
 
     @Test
     public void wontAddExitIfNotPreviouslyRegistered() {
-        String registration = "12345";
-        Vehicle testVehicle = Vehicle.withRegistration(registration);
-
-        EventLogger logger = new EventLogger();
-
         logger.addExit(testVehicle);
 
         assertEquals(0, logger.getEventLog().size());

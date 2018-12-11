@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class ChargeCalculatorTest {
 
     @Rule
@@ -52,14 +51,6 @@ public class ChargeCalculatorTest {
         assertThat(testCalculator.charge, is(new BigDecimal(6.00)));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void vehicleDoesntLeaveThrowsException() {
-        crossings.add(new EntryEvent(testVehicle));
-
-        ChargeCalculator testCalculator = new ChargeCalculator(crossings);
-
-        testCalculator.calculateChargeForTimeInZone();
-    }
 
     @Test
     public void fourPoundsIfAfter2PM() {
@@ -202,6 +193,15 @@ public class ChargeCalculatorTest {
         testCalculator.calculateChargeForTimeInZone();
 
         assertThat(testCalculator.charge, is(new BigDecimal(0.00)));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void vehicleDoesntLeaveThrowsException() {
+        crossings.add(new EntryEvent(testVehicle));
+
+        ChargeCalculator testCalculator = new ChargeCalculator(crossings);
+
+        testCalculator.calculateChargeForTimeInZone();
     }
 
 }
