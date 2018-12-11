@@ -4,11 +4,8 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
-    private Crossing crossing;
+  
     OperationsInterface operationsInterface;
-    CongestionChargeSystem(Crossing crossing){
-        this.crossing= crossing;
-    }
 
     public final List<Crossing> eventLog = new ArrayList<Crossing>();
 
@@ -22,15 +19,6 @@ public class CongestionChargeSystem {
         }
         eventLog.add(new ExitEvent(vehicle));
     }
-
-    public long testJMock(Crossing testCrossing) {
-        long time = testCrossing.getTime();
-
-
-        return time;
-    }
-
-
 
     public void calculateCharges() {
 

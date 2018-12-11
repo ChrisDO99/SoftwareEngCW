@@ -18,10 +18,6 @@ import static org.hamcrest.core.Is.is;
 
 public class ChargeCalculatorTest {
 
-    /*
-    * Tests for all of the new functionality - using JMock
-     */
-
     @Rule
     public JUnitRuleMockery context = new JUnitRuleMockery();
 

@@ -1,11 +1,13 @@
 package com.trafficmon;
+
 import org.junit.Test;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import static org.junit.Assert.*;
 
+import static org.junit.Assert.assertEquals;
 
-public class ZoneBoundaryTest {
+public class ZoneBoundaryCrossingTest {
 
     @Test
     public void getVehicleTest(){
@@ -58,4 +60,5 @@ public class ZoneBoundaryTest {
 
         assertEquals(newTime, 123458);
     }
+
 }

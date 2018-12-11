@@ -1,9 +1,11 @@
 package com.trafficmon;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class vehicleTest {
+public class VehicleTest {
 
     @Test
     public void toStringTest(){
@@ -47,4 +49,5 @@ public class vehicleTest {
         assertTrue(registration1.hashCode() == registration2.hashCode());
 
     }
+
 }

@@ -36,7 +36,4 @@ public class ZoneBoundaryCrossing implements Crossing{
         time = newTime;
     }
 
-    @Override
-    public void testFunction() {}
-
 }

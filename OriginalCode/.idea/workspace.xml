@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af98b89b-7fc6-4df2-9103-0104657c10c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/ChargeCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/ZoneBoundaryCrossingTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ChargeCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ChargeCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/CongestionChargeSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/Crossing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/Crossing.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ZoneBoundaryCrossing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/out/production/trafficmon/com/trafficmon/ZoneBoundaryCrossing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ChargeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ChargeCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/CongestionChargeSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/Crossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/Crossing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/src/com/trafficmon/ZoneBoundaryCrossing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/CongestionChargeSystemTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/VehicleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/VehicleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/ZoneBoundaryCrossingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ActualCourseWork/trafficmon/test/com/trafficmon/ZoneBoundaryCrossingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -260,7 +259,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544485656223" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544521934910" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
