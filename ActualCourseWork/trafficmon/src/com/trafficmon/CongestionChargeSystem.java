@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
-    Crossing crossing;
+    private Crossing crossing;
     OperationsInterface operationsInterface;
-    public CongestionChargeSystem(Crossing crossing){
-        this.crossing = crossing;
+    CongestionChargeSystem(Crossing crossing){
+        this.crossing= crossing;
     }
 
-    public final List<ZoneBoundaryCrossing> eventLog = new ArrayList<ZoneBoundaryCrossing>();
+    public final List<Crossing> eventLog = new ArrayList<Crossing>();
 
     public void vehicleEnteringZone(Vehicle vehicle) {
         eventLog.add(new EntryEvent(vehicle));
@@ -23,27 +23,29 @@ public class CongestionChargeSystem {
         eventLog.add(new ExitEvent(vehicle));
     }
 
-    public void testJMock(EntryEvent testEntry) {
-        System.out.println("Hello there");
-        testEntry.testFunction();
+    public long testJMock(Crossing testCrossing) {
+        long time = testCrossing.getTime();
+
+
+        return time;
     }
 
 
 
     public void calculateCharges() {
 
-        Map<Vehicle, List<ZoneBoundaryCrossing>> crossingsByVehicle = new HashMap<Vehicle, List<ZoneBoundaryCrossing>>();
+        Map<Vehicle, List<Crossing>> crossingsByVehicle = new HashMap<Vehicle, List<Crossing>>();
 
-        for (ZoneBoundaryCrossing crossing : eventLog) {
+        for (Crossing crossing : eventLog) {
             if (!crossingsByVehicle.containsKey(crossing.getVehicle())) {
-                crossingsByVehicle.put(crossing.getVehicle(), new ArrayList<ZoneBoundaryCrossing>());
+                crossingsByVehicle.put(crossing.getVehicle(), new ArrayList<Crossing>());
             }
             crossingsByVehicle.get(crossing.getVehicle()).add(crossing);
         }
 
-        for (Map.Entry<Vehicle, List<ZoneBoundaryCrossing>> vehicleCrossings : crossingsByVehicle.entrySet()) {
+        for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : crossingsByVehicle.entrySet()) {
             Vehicle vehicle = vehicleCrossings.getKey();
-            List<ZoneBoundaryCrossing> crossings = vehicleCrossings.getValue();
+            List<Crossing> crossings = vehicleCrossings.getValue();
 
             if (!checkOrderingOf(crossings)) {
                 OperationsTeam.getInstance().triggerInvestigationInto(vehicle);
@@ -66,7 +68,7 @@ public class CongestionChargeSystem {
     }
 
     private boolean previouslyRegistered(Vehicle vehicle) {
-        for (ZoneBoundaryCrossing crossing : eventLog) {
+        for (Crossing crossing : eventLog) {
             if (crossing.getVehicle().equals(vehicle)) {
                 return true;
             }
@@ -74,11 +76,11 @@ public class CongestionChargeSystem {
         return false;
     }
 
-    private boolean checkOrderingOf(List<ZoneBoundaryCrossing> crossings) {
+    private boolean checkOrderingOf(List<Crossing> crossings) {
 
-        ZoneBoundaryCrossing lastEvent = crossings.get(0);
+        Crossing lastEvent = crossings.get(0);
 
-        for (ZoneBoundaryCrossing crossing : crossings.subList(1, crossings.size())) {
+        for (Crossing crossing : crossings.subList(1, crossings.size())) {
             if (crossing.getTime() < lastEvent.getTime()) {
                 return false;
             }
