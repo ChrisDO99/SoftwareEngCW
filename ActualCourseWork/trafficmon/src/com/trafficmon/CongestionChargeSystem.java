@@ -5,22 +5,19 @@ import java.util.*;
 
 public class CongestionChargeSystem {
 
-    OperationsInterface operationsInterface;
-
-    public final List<Crossing> eventLog = new ArrayList<Crossing>();
+    private EventLogger logger = new EventLogger();
 
     public void vehicleEnteringZone(Vehicle vehicle) {
-        eventLog.add(new EntryEvent(vehicle));
+        logger.addEntry(vehicle);
     }
 
     public void vehicleLeavingZone(Vehicle vehicle) {
-        if (!previouslyRegistered(vehicle)) {
-            return;
-        }
-        eventLog.add(new ExitEvent(vehicle));
+        logger.addExit(vehicle);
     }
 
     public void calculateCharges() {
+
+        List<Crossing> eventLog = logger.getEventLog();
 
         Map<Vehicle, List<Crossing>> crossingsByVehicle = new HashMap<Vehicle, List<Crossing>>();
 
@@ -53,15 +50,6 @@ public class CongestionChargeSystem {
                 }
             }
         }
-    }
-
-    private boolean previouslyRegistered(Vehicle vehicle) {
-        for (Crossing crossing : eventLog) {
-            if (crossing.getVehicle().equals(vehicle)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private boolean checkOrderingOf(List<Crossing> crossings) {
