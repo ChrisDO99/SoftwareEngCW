@@ -1,6 +1,5 @@
 package com.trafficmon;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
@@ -29,47 +28,13 @@ public class CongestionChargeSystem {
         }
 
         for (Map.Entry<Vehicle, List<Crossing>> vehicleCrossings : crossingsByVehicle.entrySet()) {
-            Vehicle vehicle = vehicleCrossings.getKey();
             List<Crossing> crossings = vehicleCrossings.getValue();
 
-            if (!checkOrderingOf(crossings)) {
-                OperationsTeam.getInstance().triggerInvestigationInto(vehicle);
-            } else {
+            ChargeCalculator calculator = new ChargeCalculator(crossings);
 
-                ChargeCalculator calculator = new ChargeCalculator(crossings);
+            calculator.calculateChargeForTimeInZone();
 
-                BigDecimal charge = calculator.calculateChargeForTimeInZone();
-
-                try {
-                    //this is where charge is deducted
-                    RegisteredCustomerAccountsService.getInstance().accountFor(vehicle).deduct(charge);
-                } catch (InsufficientCreditException ice) {
-                    OperationsTeam.getInstance().issuePenaltyNotice(vehicle, charge);
-                } catch (AccountNotRegisteredException e) {
-                    OperationsTeam.getInstance().issuePenaltyNotice(vehicle, charge);
-                }
-            }
+            calculator.deductCharges();
         }
     }
-
-    private boolean checkOrderingOf(List<Crossing> crossings) {
-
-        Crossing lastEvent = crossings.get(0);
-
-        for (Crossing crossing : crossings.subList(1, crossings.size())) {
-            if (crossing.getTime() < lastEvent.getTime()) {
-                return false;
-            }
-            if (crossing instanceof EntryEvent && lastEvent instanceof EntryEvent) {
-                return false;
-            }
-            if (crossing instanceof ExitEvent && lastEvent instanceof ExitEvent) {
-                return false;
-            }
-            lastEvent = crossing;
-        }
-
-        return true;
-    }
-
 }

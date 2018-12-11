@@ -52,26 +52,12 @@ public class VehicleTest {
 
     }
 
-
-    //I think the hashcode function called here is the base one and not the
-    //one overriden in Vehicle
     @Test
     public void hashCodeTest(){
-
         String registration0 = "";
         Vehicle testVehicle0 = Vehicle.withRegistration(registration0);
 
-        String registration1 = "12345";
-        Vehicle testVehicle1 = Vehicle.withRegistration(registration1);
-
-        String registration2 = "12345";
-        Vehicle testVehicle2 = Vehicle.withRegistration(registration2);
-
-
         assertEquals(0, testVehicle0.hashCode());
-        assertTrue(registration1.equals(registration2) && registration2.equals(registration1));
-        assertTrue(registration1.hashCode() == registration2.hashCode());
-
     }
 
 }

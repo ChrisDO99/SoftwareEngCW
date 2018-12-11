@@ -71,8 +71,8 @@ public class ZoneBoundaryCrossingTest {
         Vehicle testVehicle = Vehicle.withRegistration(registration);
         ZoneBoundaryCrossing test = new ZoneBoundaryCrossing(testVehicle);
 
-        long currentTime = System.currentTimeMillis();
-        long crossingTime = test.getTime();
+        long currentTime = System.currentTimeMillis()/100;
+        long crossingTime = test.getTime()/100;
 
         assertEquals(currentTime, crossingTime);
     }
