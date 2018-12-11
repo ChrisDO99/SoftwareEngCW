@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class CongestionChargeSystem {
-  
+
     OperationsInterface operationsInterface;
 
     public final List<Crossing> eventLog = new ArrayList<Crossing>();

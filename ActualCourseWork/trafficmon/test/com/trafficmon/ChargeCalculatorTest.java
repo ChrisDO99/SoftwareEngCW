@@ -4,16 +4,12 @@ import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Rule;
 import org.junit.Test;
-
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class ChargeCalculatorTest {
@@ -22,23 +18,6 @@ public class ChargeCalculatorTest {
     public JUnitRuleMockery context = new JUnitRuleMockery();
 
     long twentyThreeOEight = 1544483284396L;
-
-
-    @Test
-    public void jMockTest() {
-        Crossing mockCrossing = context.mock(Crossing.class);
-
-        context.checking(new Expectations() {{
-            exactly(1).of(mockCrossing).getTime();
-            will(returnValue(2L));
-        }});
-        CongestionChargeSystem testSystem = new CongestionChargeSystem(mockCrossing);
-
-        long result = testSystem.testJMock(mockCrossing);
-
-        assertThat(result, is(2L));
-    }
-
 
     @Test
     public void sixPoundsIfBefore2PM() {

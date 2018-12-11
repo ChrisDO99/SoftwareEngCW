@@ -6,59 +6,75 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ZoneBoundaryCrossingTest {
 
     @Test
     public void getVehicleTest(){
-
         String registration = "12345";
         Vehicle testVehicle = Vehicle.withRegistration(registration);
-        ZoneBoundaryCrossing test = new ZoneBoundaryCrossing(testVehicle);
+        ZoneBoundaryCrossing testCrossing = new ZoneBoundaryCrossing(testVehicle);
 
-        assertEquals(test.getVehicle(), testVehicle);
+        assertEquals(testCrossing.getVehicle(), testVehicle);
     }
-
 
     @Test
     public void getHourTest(){
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
+        Date date = new Date(System.currentTimeMillis());
+        ZoneBoundaryCrossing testCrossing = new ZoneBoundaryCrossing(testVehicle);
 
-        long time = 1544477121111L; // 21:25 on 10/12/2018
         SimpleDateFormat hourExtract = new SimpleDateFormat("HH");
-        Date date = new Date(time);
         int hour = Integer.parseInt(hourExtract.format(date));
 
-        assertEquals(hour, 21);
+        assertEquals(hour, testCrossing.getHour());
     }
 
     @Test
+    public void entryEventTest() {
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
 
+        EntryEvent testEntry = new EntryEvent(testVehicle);
+
+        assertTrue(testEntry instanceof ZoneBoundaryCrossing);
+    }
+
+    @Test
+    public void exitEventTest() {
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
+
+        ExitEvent testExit = new ExitEvent(testVehicle);
+
+        assertTrue(testExit instanceof ZoneBoundaryCrossing);
+    }
+
+    @Test
+    public void entryAndExitEventsNotEqual() {
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
+
+        EntryEvent testEntry = new EntryEvent(testVehicle);
+        ExitEvent testExit = new ExitEvent(testVehicle);
+
+        assertFalse(testEntry.equals(testExit));
+    }
+
+    @Test
     public void getTimeTest(){
 
         String registration = "12345";
         Vehicle testVehicle = Vehicle.withRegistration(registration);
         ZoneBoundaryCrossing test = new ZoneBoundaryCrossing(testVehicle);
 
+        long currentTime = System.currentTimeMillis();
+        long crossingTime = test.getTime();
 
-        long time = System.currentTimeMillis();
-        long newTime = test.getTime();
-
-        assertEquals(time, newTime);
-
-    }
-
-    @Test
-    public void setTime(){
-
-
-        String registration = "12345";
-        Vehicle testVehicle = Vehicle.withRegistration(registration);
-        ZoneBoundaryCrossing test = new ZoneBoundaryCrossing(testVehicle);
-
-        test.setTime(123458);
-        long newTime = test.getTime();
-
-        assertEquals(newTime, 123458);
+        assertEquals(currentTime, crossingTime);
     }
 
 }

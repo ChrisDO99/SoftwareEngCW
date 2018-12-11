@@ -31,9 +31,4 @@ public class ZoneBoundaryCrossing implements Crossing{
         return time;
     }
 
-    @Override
-    public void setTime(long newTime) {
-        time = newTime;
-    }
-
 }

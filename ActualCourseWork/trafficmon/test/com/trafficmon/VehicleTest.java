@@ -20,7 +20,7 @@ public class VehicleTest {
     }
 
     @Test
-    public void equalsTest(){
+    public void vehicleDoesNotEqualDifferentVehicle(){
 
         String registration1 = "12345";
         Vehicle testVehicle1 = Vehicle.withRegistration(registration1);
@@ -29,8 +29,32 @@ public class VehicleTest {
         Vehicle testVehicle2 = Vehicle.withRegistration(registration2);
 
         assertEquals(false, testVehicle1.equals(testVehicle2));
+
     }
 
+    @Test
+    public void vehicleEqualsItself(){
+
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
+
+        assertEquals(true, testVehicle.equals(testVehicle));
+
+    }
+
+    @Test
+    public void vehicleReturnsFalseForNull(){
+
+        String registration = "12345";
+        Vehicle testVehicle = Vehicle.withRegistration(registration);
+
+        assertEquals(false, testVehicle.equals(null));
+
+    }
+
+
+    //I think the hashcode function called here is the base one and not the
+    //one overriden in Vehicle
     @Test
     public void hashCodeTest(){
 
