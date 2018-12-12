@@ -13,12 +13,10 @@ public class ZoneBoundaryCrossing implements Crossing{
         this.time = System.currentTimeMillis();
     }
 
-    @Override
     public Vehicle getVehicle() {
         return vehicle;
     }
 
-    @Override
     public int getHour() {
         SimpleDateFormat hourExtract = new SimpleDateFormat("HH");
         Date date = new Date(time);
@@ -26,7 +24,6 @@ public class ZoneBoundaryCrossing implements Crossing{
         return hour;
     }
 
-    @Override
     public long getTime() {
         return time;
     }

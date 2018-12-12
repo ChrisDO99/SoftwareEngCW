@@ -43,7 +43,7 @@ public class ChargeCalculator {
     }
 
     private int calculateEntryCharge(Crossing crossing) {
-        int entryCost = 1234;
+        int entryCost = 0;
         if (crossing.getHour() < 14) {
             entryCost = 6;
         }
